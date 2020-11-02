@@ -42,7 +42,7 @@ class UsersBoundaryCallback(
             .ignoreElement()
             .doFinally { isRequestRunning = false }
             .subscribe({
-                Log.e("Jason ", "$nextPage page retrieved from API and users saved in database")
+                Log.e("Jason", "$nextPage page retrieved from API and users saved in database")
             },
                 { it.printStackTrace() }
             )
