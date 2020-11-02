@@ -52,7 +52,6 @@ class UserFragment : DaggerFragment() {
         })
     }
 
-
     companion object {
         const val TAG = "UserFragment"
 
