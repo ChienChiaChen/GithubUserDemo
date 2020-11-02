@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -42,4 +44,50 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    // dagger
+    implementation "com.google.dagger:dagger:$rootProject.dagger"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger"
+    implementation "com.google.dagger:dagger-android:$rootProject.dagger"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger"
+
+    // google architecture components
+    implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle"
+
+    implementation "com.google.android.material:material:$rootProject.material"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerView"
+    implementation "com.google.code.gson:gson:$rootProject.gson"
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+
+    //Paging Library
+    implementation "androidx.paging:paging-runtime:$paging"
+    implementation "androidx.paging:paging-rxjava2:$paging"
+
+    // Room
+    implementation "androidx.room:room-runtime:$room"
+    implementation "androidx.room:room-rxjava2:$room"
+    kapt "androidx.room:room-compiler:$room"
+    androidTestImplementation "androidx.room:room-testing:$room"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp"
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:$retrofit") {
+        // exclude Retrofit’s OkHttp peer-dependency module and define your own module import
+        exclude module: 'okhttp'
+    }
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide"
+    kapt "com.github.bumptech.glide:compiler:$glide"
+
 }
