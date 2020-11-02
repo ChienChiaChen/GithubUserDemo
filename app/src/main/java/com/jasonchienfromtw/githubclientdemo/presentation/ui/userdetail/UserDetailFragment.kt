@@ -18,6 +18,8 @@ class UserDetailFragment : Fragment() {
     }
 
     companion object {
+        const val TAG = "UserDetailFragment"
+
         @JvmStatic
         fun newInstance() = UserDetailFragment()
     }
